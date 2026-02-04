@@ -32,9 +32,28 @@ string reverseVowels(string &s)
     return s;
 }
 
+
+
+string reverseit(string s, int k)
+{
+    string result = s;
+    string rev = s;
+    reverse(rev.begin(), rev.end());
+
+    for (int i = 1; i <= k; i++)
+    {
+        if (i % 2 == 0)
+            s += result;   // even → reversed
+        else
+            s += rev;     // odd → original
+    }
+
+    return s;
+}
+
 int main()
 {
-    string s = "IcecReAm";
-    cout << reverseVowels(s) << endl;
+    string s = "has";
+    cout << reverseit(s, 5) << endl;
     return 0;
 }
