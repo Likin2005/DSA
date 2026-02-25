@@ -47,6 +47,7 @@ int longest_subarray(vector<int> &num, int target)
             seen[sum] = i;
         }
     }
+    return len;
 }
 
 pair<int, int> pair_sum(vector<int> &num, int target)

@@ -104,15 +104,15 @@ int range_sum(vector<int> num, int left, int right)
     }
 }
 
-int equilibrium_index(vector<int> num)
+int equilibrium_index(vector<int> &num)
 {
     if(num.empty()) return -1;
     if(num.size() == 1) return 0;
     
     int right_sum = accumulate(num.begin(), num.end(),0);
-    int left_sum = 0, x = num.size();
+    int left_sum = 0;
     
-    for(int i=0;i<x;i++)
+    for(int i=0;i<num.size();i++)
     {
         right_sum-=num[i];
 
@@ -128,6 +128,7 @@ int equilibrium_index(vector<int> num)
 
 int main()
 {
-    vector<int> num = {1,1,0};
+    vector<int> num = {-7, 1, 5, 2, -4, 3, 0};
+    cout << equilibrium_index(num);
     return 0;
 }
