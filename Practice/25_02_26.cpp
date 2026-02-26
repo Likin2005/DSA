@@ -79,15 +79,16 @@ int count_subarray(vector<int> &num, int target)
     return count;
 }
 
-int longest_subarray(vector<int> &num, int target)
+int longest_subarray(vector<int> &arr, int target)
 {
-    if(num.empty()) return 0;
-    unordered_map<int, int> seen;
-    int sum = 0, len = 0;
+    if(arr.empty()) return 0;
+    unordered_map<long long, int> seen;
+    long long sum = 0;
+    int len = 0;
 
-    for(int i=0;i<num.size();i++)
+    for(int i=0;i<arr.size();i++)
     {
-        sum += num[i];
+        sum += arr[i];
 
         if(sum == target)
         {
