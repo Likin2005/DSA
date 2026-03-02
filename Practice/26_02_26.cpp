@@ -14,30 +14,6 @@ int kadanes_algo(vector<int> &num)
     return max_sum;
 }
 
-vector<vector<int>> three_sum(vector<int> &num)
-{
-    if(num.size() < 3) return {{}};
-    vector<vector<int>> res;
-    
-    for(int i=0;i<num.size();i++)
-    {
-        for(int j=i+1;j<num.size();j++)
-        {
-            for(int k=j+1;k<num.size();k++)
-            {
-                if(num[i] != num[j] && num[j] != num[k] && num[k] != num[i])
-                {
-                    if(num[i] + num[j] + num[k] == 0)
-                    {
-                        res.push_back({num[i], num[j], num[k]});
-                    }
-                }
-            }
-        }
-    }
-    return res;
-}
-
 int binary_to_decimal(string s)
 {
     if(s.empty()) return 0;
@@ -47,7 +23,7 @@ int binary_to_decimal(string s)
     {
         if(s[i] == '1')
         {
-            n += (1 << x);
+            n += pow(2, x);
         }
         x--;
     }
