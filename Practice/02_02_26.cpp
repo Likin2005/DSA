@@ -3,7 +3,7 @@ using namespace std;
 
 vector<vector<int>> three_sum(vector<int> &num)
 {
-    if(num.size() < 0) return {};
+    if(num.size() < 3) return {};
     sort(num.begin(), num.end());
     vector<vector<int>> res;
     for(int i=0;i<num.size();i++)
