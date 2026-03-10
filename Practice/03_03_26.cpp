@@ -102,12 +102,15 @@ char first_non_repeating(string s)
 
 string remove_duplicate(string s)
 {
-    string res = "";
-    for(char i : s)
+    if(s.size() < 2) return s;
+    string res;
+    vector<bool> seen(256, false);
+    for(unsigned char i : s)
     {
-        if(find(res.begin(), res.end(), i) == res.end())
+        if(!(seen[i]))
         {
-            res += i;
+            res+=i;
+            seen[i] = true;
         }
     }
     return res;
@@ -125,7 +128,7 @@ string toggle_case(string s)
 
 int main()
 {
-    string s = "Ai-Ml";
-    cout << toggle_case(s) << endl;
+    string s = "programming";
+    cout << remove_duplicate(s) << endl;
     return 0;
 }
