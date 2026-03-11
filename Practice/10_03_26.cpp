@@ -29,6 +29,8 @@ long aVeryBigSum(vector<long> ar) {
 
 int main()
 {
-    cout << longest_substring("pwwkew");
+    unordered_map<int,int> seen;
+    int x = seen.size();
+    cout << x;
     return 0;
 }
