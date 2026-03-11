@@ -42,16 +42,17 @@ int first_non_repeating(string s)
 bool isomorphic(string s, string t)
 {
     if(s.length() != t.length()) return false;
-    unordered_map<char, char> seen;
+    unordered_map<char, char> seen1, seen2;
     for(int i=0;i<s.length();i++)
     {
-        if(seen.find(s[i]) == seen.end())
+        if(seen1.find(s[i]) == seen1.end() && seen2.find(t[i]) == seen2.end())
         {
-            seen[s[i]] = t[i];
+            seen1[s[i]] = t[i];
+            seen2[t[i]] = s[i];
         }
         else
         {
-            if(seen[s[i]] != t[i])
+            if(seen1[s[i]] != t[i])
             {
                 return false;
             }
@@ -82,6 +83,6 @@ int longestPalindrome(string s)
 int main()
 {
     string s = "abccccdd";
-    cout << longestPalindrome(s) << endl;
+    cout << isomorphic("aabaa", "xxzyy") << endl;
     return 0;
 }
