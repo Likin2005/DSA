@@ -16,7 +16,7 @@ public:
 struct linkedlist
 {
     int item;
-    linkedlist* next;
+    struct linkedlist* next;
 };
 
 
